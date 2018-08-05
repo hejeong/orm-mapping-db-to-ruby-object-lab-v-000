@@ -37,7 +37,7 @@ class Student
 
   def self.students_below_12th_grade
     self.all.select do |student|
-      if student.grade < 12
+      if student.grade.to_i < 12
         true
       end
     end
