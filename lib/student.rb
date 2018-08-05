@@ -36,11 +36,11 @@ class Student
   end
 
   def self.students_below_12th_grade
-    sql = <<-SQL
-          SELECT name FROM students
-          WHERE grade < 12
-          SQL
-    DB[:conn].execute(sql).flatten
+    self.all.select do |student|
+      if student.grade < 12
+        true
+      end 
+    end
   end
 
   def save
