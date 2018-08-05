@@ -16,7 +16,9 @@ class Student
     array_of_rows = db[:conn].execute(sql)
 
     # create new student objects
-
+    array_of_rows.map do |row|
+      Student.new_from_db(row)
+    end
   end
 
   def self.find_by_name(name)
