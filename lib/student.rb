@@ -39,7 +39,7 @@ class Student
     self.all.select do |student|
       if student.grade < 12
         true
-      end 
+      end
     end
   end
 
