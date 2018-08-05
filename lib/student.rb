@@ -32,8 +32,9 @@ class Student
           SELECT COUNT(id) FROM students
           WHERE grade = 9
           SQL
+    count = DB[:conn].execute(sql)
   end
-  
+
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
