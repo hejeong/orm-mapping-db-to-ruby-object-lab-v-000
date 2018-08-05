@@ -13,7 +13,7 @@ class Student
     sql = <<-SQL
           SELECT * FROM students
           SQL
-    array_of_rows = db[:conn].execute(sql)
+    array_of_rows = DB[:conn].execute(sql)
 
     # create new student objects
     array_of_rows.map do |row|
