@@ -50,6 +50,10 @@ class Student
     grade_10_students.take(number)
   end
 
+  def self.first_student_in_grade_10
+    self.first_X_students_in_grade_10(1)
+  end
+
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
