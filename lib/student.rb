@@ -24,7 +24,7 @@ class Student
   def self.find_by_name(name)
     self.all.detect do |student|
       student.name = name
-    end.first
+    end
   end
 
   def save
