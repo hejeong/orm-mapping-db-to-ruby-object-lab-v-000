@@ -49,11 +49,17 @@ class Student
     end
     grade_10_students.take(number)
   end
-
+  
   def self.first_student_in_grade_10
     self.first_X_students_in_grade_10(1).first
   end
 
+  def self.all_students_in_grade_X(grade)
+    self.all.select do |student|
+        student.grade == grade.to_s
+    end
+  end
+  
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
