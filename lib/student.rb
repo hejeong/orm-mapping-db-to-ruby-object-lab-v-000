@@ -43,6 +43,12 @@ class Student
     end
   end
 
+  def self.first_X_students_in_grade_10(number)
+    self.all.select do |student|
+      student.grade == 10
+    end
+  end
+
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
